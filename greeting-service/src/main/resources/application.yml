@@ -1,0 +1,14 @@
+spring:
+  config:
+    import: 'optional:configserver:'
+  application:
+    name: greeting-service
+greeting-service:
+  greeting: "Ola"
+  default-value: "Mundo"
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'

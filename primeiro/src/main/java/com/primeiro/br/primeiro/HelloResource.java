@@ -1,4 +1,4 @@
-package com.primeiro.br.primeiro;
+package br.com.jose.greetingservice;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
