@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cace39b3-d58a-4c1c-9fec-b8c51826d9ef" name="Changes" comment="" />
+    <list default="true" id="cace39b3-d58a-4c1c-9fec-b8c51826d9ef" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../04-config-server/src/main/resources/config/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../04-config-server/src/main/resources/config/application-perf.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../04-config-server/src/main/resources/config/application-prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../04-config-server/src/main/resources/config/application-qa.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +36,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/jqueiroz/Documents/aula-springBoot/1 - springboot-microservices/full/full",
+    "last_opened_file_path": "C:/Users/jqueiroz/Documents/aula-springBoot/1 - springboot-microservices/primeiro",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,6 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1679054770094</updated>
       <workItem from="1679054771185" duration="740000" />
+      <workItem from="1679337355198" duration="7000" />
     </task>
     <servers />
   </component>
