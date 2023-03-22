@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 
 
 
+import com.example.demo.proxy.CambioProxy;
 import com.example.demo.repository.BookRepository;
 import com.example.demo.response.Cambio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +26,34 @@ public class BookServiceController {
 	private Environment environment;
 
 	@Autowired
+	private CambioProxy proxy;
+	@Autowired
 	private BookRepository repository;
 	
 
 	@GetMapping(value="/{id}/{currency}")
 	public Book findBook(@PathVariable("id") Long id, @PathVariable("currency") String currency) {
 		
+		var book = repository.getById(id);
+
+
+
+		if (book == null) throw new RuntimeException("Book not found");
+
+
+
+	var cambio = proxy.getCambio(book.getPrice(),"USD",currency);
+
+		var port = environment.getProperty("local.server.port");
+		book.setPrice(cambio.getConvertedValue());
+		book.setEnvironment(port +"Feign");
+		return book;
+	}
+}
+/*
+	@GetMapping(value="/{id}/{currency}")
+	public Book findBook(@PathVariable("id") Long id, @PathVariable("currency") String currency) {
+
 		var book = repository.getById(id);
 		HashMap<String,String> paramns = new HashMap<>();
 
@@ -41,7 +64,7 @@ public class BookServiceController {
 		paramns.put("to",currency);
 
 		var response = new RestTemplate().getForEntity("http://localhost:8000/cambio-service/{amount}/{from}/{to}",
-		Cambio.class,paramns);
+				Cambio.class,paramns);
 
 		var cambio = response.getBody();
 
@@ -49,6 +72,4 @@ public class BookServiceController {
 		book.setPrice(cambio.getConvertedValue());
 		book.setEnvironment(port);
 		return book;
-
-	}
-}
+	}*/
